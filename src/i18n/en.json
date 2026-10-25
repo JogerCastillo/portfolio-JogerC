@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Joger Castillo",
+    "title": "Full Stack Developer",
+    "cta": "Contact me"
+  },
+  "about": {
+    "title": "About me",
+    "description": "Full Stack Developer with comprehensive mastery of the modern web ecosystem, specialized in JavaScript (ES6+, Node.js, Express, NestJS), Python (Django, FastAPI) and C# (.NET). I design and implement robust architectures with MySQL and MongoDB databases, scalable RESTful APIs, and professional version control (Git/GitHub/GitLab). I combine technical excellence with analytical thinking, proactivity, and an unwavering commitment to code quality and efficient problem-solving."
+  },
+  "projects": {
+    "title": "Projects",
+    "project1": {
+      "title": "Help Desk — Ticket System",
+      "desc": "Internal support ticket system with Kanban panel, priority management, agent assignment, and real-time filters. Built with React, Node.js, Express and MySQL.",
+      "tech": ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"]
+    },
+    "project2": {
+      "title": "Appointment Scheduling System",
+      "desc": "Appointment management platform with role-based auth, offline mode with local storage, metrics dashboard, and status tracking. Python FastAPI backend with React frontend.",
+      "tech": ["React", "FastAPI", "Python", "MySQL", "JWT"]
+    },
+    "project3": {
+      "title": "Inventory & Sales System",
+      "desc": "Comprehensive inventory and billing system with real-time stock control, sales recording, report generation and product management. Full stack with React, Node.js and MySQL.",
+      "tech": ["React", "Node.js", "Express", "MySQL", "Bootstrap"]
+    },
+    "project4": {
+      "title": "Cybersecurity",
+      "desc": "Hardening system, intrusion detection and real-time monitoring. Automated vulnerability analysis with Python and Bash scripts. Currently in development.",
+      "tech": ["Python", "Docker", "Linux", "Bash"],
+      "comingSoon": true
+    },
+    "comingSoon": "In progress"
+  },
+  "skills": {
+    "title": "Skills",
+    "softTitle": "Soft skills",
+    "softSkills": ["Analytical thinking", "Proactivity"],
+    "languagesTitle": "Languages",
+    "languages": "Languages: Native Spanish, English B2.2",
+    "languagesList": [
+      { "name": "Spanish", "level": "Native" },
+      { "name": "English", "level": "B2.2" }
+    ],
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks / Libraries",
+      "databases": "Databases",
+      "tools": "Tools / DevOps"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+        "send": "Send message",
+        "sending": "Sending...",
+        "success": "Message sent. Thank you!",
+        "error": "Sending failed. Please try again."
+    },
+    "revealEmail": "Show email",
+    "revealPhone": "Show phone",
+    "email": "joger6c@gmail.com",
+    "phone": "REDACTED",
+    "copied": "Copied to clipboard",
+    "githubUrl": "https://github.com/JogerC",
+    "linkedinUrl": "https://www.linkedin.com/in/joger-gabriel-castillo-quitian-91b0451a5/",
+    "whatsappUrl": "https://wa.me/REDACTED"
+  },
+  "footer": "Designed and built by Joger Castillo."
+}

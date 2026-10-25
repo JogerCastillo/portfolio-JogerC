@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+} 

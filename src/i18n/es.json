@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Joger Castillo",
+    "title": "Desarrollador Full Stack",
+    "cta": "Contáctame"
+  },
+  "about": {
+    "title": "Acerca de mí",
+    "description": "Desarrollador Full Stack con dominio integral del ecosistema web moderno, especializado en JavaScript (ES6+, Node.js, Express, NestJS), Python (Django, FastAPI) y C# (.NET). Diseño e implemento arquitecturas robustas con bases de datos MySQL y MongoDB, APIs RESTful escalables y control de versiones profesional (Git/GitHub/GitLab). Combino excelencia técnica con pensamiento analítico, proactividad y un compromiso absoluto con la calidad del código y la resolución de problemas complejos."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "project1": {
+      "title": "Mesa de Ayuda — Help Desk",
+      "desc": "Sistema de tickets de soporte interno con panel Kanban, gestión de prioridades, asignación de agentes y filtros en tiempo real. Construido con React, Node.js, Express y MySQL.",
+      "tech": ["React", "Node.js", "Express", "MySQL", "Tailwind CSS"]
+    },
+    "project2": {
+      "title": "Sistema de Agenda de Citas",
+      "desc": "Plataforma de gestión de citas con autenticación por roles, modo offline con almacenamiento local, dashboard de métricas y trazabilidad de estados. API en Python con FastAPI y frontend en React.",
+      "tech": ["React", "FastAPI", "Python", "MySQL", "JWT"]
+    },
+    "project3": {
+      "title": "Inventario y Ventas",
+      "desc": "Sistema integral de inventario y facturación con control de stock en tiempo real, registro de ventas, generación de reportes y gestión de productos. Full stack con React, Node.js y MySQL.",
+      "tech": ["React", "Node.js", "Express", "MySQL", "Bootstrap"]
+    },
+    "project4": {
+      "title": "Seguridad Informática",
+      "desc": "Sistema de hardening, detección de intrusiones y monitoreo en tiempo real. Automatización de análisis de vulnerabilidades con scripts en Python y Bash. Actualmente en desarrollo.",
+      "tech": ["Python", "Docker", "Linux", "Bash"],
+      "comingSoon": true
+    },
+    "comingSoon": "En desarrollo"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "softTitle": "Habilidades blandas",
+    "softSkills": ["Pensamiento analítico", "Proactividad"],
+    "languagesTitle": "Idiomas",
+    "languages": "Idiomas: Español nativo, Inglés B2.2",
+    "languagesList": [
+      { "name": "Español", "level": "Nativo" },
+      { "name": "Inglés", "level": "B2.2" }
+    ],
+    "categories": {
+      "languages": "Lenguajes",
+      "frameworks": "Frameworks / Librerías",
+      "databases": "Bases de datos",
+      "tools": "Herramientas / DevOps"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+        "send": "Enviar mensaje",
+        "sending": "Enviando...",
+        "success": "Mensaje enviado. ¡Gracias!",
+        "error": "Error al enviar. Intenta de nuevo."
+    },
+    "revealEmail": "Mostrar correo",
+    "revealPhone": "Mostrar teléfono",
+    "email": "joger6c@gmail.com",
+    "phone": "REDACTED",
+    "copied": "Copiado al portapapeles",
+    "githubUrl": "https://github.com/JogerC",
+    "linkedinUrl": "https://www.linkedin.com/in/joger-gabriel-castillo-quitian-91b0451a5/",
+    "whatsappUrl": "https://wa.me/REDACTED"
+  },
+  "footer": "Diseñado y desarrollado por Joger Castillo."
+}
