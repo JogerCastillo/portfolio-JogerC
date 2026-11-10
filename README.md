@@ -1,6 +1,9 @@
-# Portfolio — Francisco López
+# Portfolio — Joger Castillo
 
 Portafolio personal desarrollado con React + Vite + Tailwind CSS.
+
+- Autor: Joger Castillo — Full Stack Developer
+- Sitio: https://portfolio-jogerc.netlify.app
 
 Incluye función serverless en Netlify para el formulario de contacto con protección Turnstile, rate limiting y sanitización de entradas.
 
