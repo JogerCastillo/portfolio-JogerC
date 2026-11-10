@@ -1,0 +1,116 @@
+<!--
+  og-image.html — Fuente de diseño para la imagen Open Graph 1200×630.
+
+  Cómo capturarla:
+  1. Abre este archivo en Chrome.
+  2. Activa DevTools (F12).
+  3. Activa el modo dispositivo (Ctrl+Shift+M).
+  4. Pon las dimensiones 1200×630.
+  5. Usa "Capture screenshot".
+  6. Guarda la captura como public/og-image.png.
+-->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>og-image — Joger Castillo</title>
+    <style>
+      :root {
+        --bg: #111827;          /* Tailwind gray-900 (fondo oscuro del sitio) */
+        --bg-deep: #0b1220;
+        --bg-soft: #1f2937;     /* Tailwind gray-800 */
+        --accent: #60a5fa;      /* Tailwind blue-400 (acento en modo oscuro) */
+        --white: #ffffff;
+        --muted: #cbd5e1;       /* Tailwind slate-300 */
+        --faint: #94a3b8;       /* Tailwind slate-400 */
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 64px;
+        background:
+          radial-gradient(circle at 20% 15%, rgba(37, 99, 235, 0.22), transparent 55%),
+          radial-gradient(circle at 85% 90%, rgba(96, 165, 250, 0.12), transparent 50%),
+          linear-gradient(135deg, var(--bg-deep) 0%, var(--bg) 55%, var(--bg-soft) 100%);
+      }
+
+      .name {
+        margin: 0;
+        font-size: 88px;
+        font-weight: 700;
+        line-height: 1.05;
+        color: var(--white);
+        letter-spacing: -0.02em;
+      }
+
+      .role {
+        margin: 18px 0 0;
+        font-size: 40px;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .divider {
+        width: 140px;
+        height: 3px;
+        margin: 44px 0 28px;
+        border-radius: 999px;
+        background: var(--accent);
+        opacity: 0.55;
+      }
+
+      .stack {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0.01em;
+      }
+
+      .site {
+        position: absolute;
+        left: 64px;
+        bottom: 44px;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--faint);
+        letter-spacing: 0.02em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1 class="name">Joger Castillo</h1>
+      <p class="role">Full Stack Developer</p>
+      <div class="divider"></div>
+      <p class="stack">React · Node.js · NestJS · Python · PostgreSQL</p>
+      <p class="site">portfolio-jogerc.netlify.app</p>
+    </div>
+  </body>
+</html>
