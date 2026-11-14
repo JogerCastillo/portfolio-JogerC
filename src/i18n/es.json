@@ -24,6 +24,7 @@
     "title": "Proyectos",
     "viewDemo": "Ver demo",
     "viewRepo": "Ver repositorio",
+    "goToPage": "Ir a la página",
     "project1": {
       "title": "Mesa de Ayuda — Help Desk",
       "desc": "Sistema de tickets de soporte interno con panel Kanban, gestión de prioridades, asignación de agentes y filtros en tiempo real. Construido con React, Node.js, Express y MySQL.",

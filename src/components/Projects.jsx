@@ -211,7 +211,7 @@ const Projects = () => {
                     ? 'w-8 bg-blue-600 dark:bg-blue-400'
                     : 'w-2 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                 }`}
-                aria-label={`Ir a página ${i + 1}`}
+                aria-label={`${t('projects.goToPage')} ${i + 1}`}
               />
             ))}
           </div>
