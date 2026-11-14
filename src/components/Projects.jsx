@@ -106,6 +106,10 @@ const Projects = () => {
           ref={containerRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          role="region"
+          aria-label={t('projects.title')}
+          aria-roledescription="carousel"
+          aria-live="polite"
           className="overflow-hidden -mx-3"
         >
           <motion.div
@@ -134,6 +138,8 @@ const Projects = () => {
                         <img
                           src={project.src}
                           alt={title}
+                          width="1920"
+                          height="1080"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
                         />
@@ -164,7 +170,7 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2.5 bg-white/90 rounded-full text-gray-800 hover:bg-white hover:scale-110 transition-all"
-                            aria-label="GitHub repo"
+                            aria-label={`${t('projects.viewRepo')}: ${title}`}
                           >
                             <FiGithub size={20} />
                           </a>
