@@ -142,7 +142,7 @@ const Contact = () => {
                 aria-label="LinkedIn"
                 className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer"
               >
-                <img src="/logos/linkedin.svg" alt="LinkedIn" className="h-6 w-6" />
+                <img src="/logos/linkedin.svg" alt="" className="h-6 w-6" />
               </button>
 
               <button
@@ -150,7 +150,7 @@ const Contact = () => {
                 aria-label="GitHub"
                 className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer"
               >
-                <img src="/logos/github.svg" alt="GitHub" className="h-6 w-6" />
+                <img src="/logos/github.svg" alt="" className="h-6 w-6" />
               </button>
             </div>
           </motion.div>
