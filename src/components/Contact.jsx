@@ -127,36 +127,22 @@ const Contact = () => {
               />
             </form>
 
-            <div className="flex flex-col justify-center items-center gap-6 w-fit ml-5 -mt-13">
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => openUrl(t('contact.whatsappUrl'))}
-                  aria-label={t('contact.revealPhone')}
-                  className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer"
-                >
-                  <img src="/logos/whatsapp_business.svg" alt="WhatsApp" className="h-6 w-6" />
-                </button>
-              </div>
+            <div className="flex flex-col items-start gap-4 w-fit ml-5 self-start">
+              <button
+                onClick={() => openUrl(t('contact.linkedinUrl'))}
+                aria-label="LinkedIn"
+                className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer"
+              >
+                <img src="/logos/linkedin.svg" alt="LinkedIn" className="h-6 w-6" />
+              </button>
 
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => openUrl(t('contact.linkedinUrl'))}
-                  aria-label="LinkedIn"
-                  className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer"
-                >
-                  <img src="/logos/linkedin.svg" alt="LinkedIn" className="h-6 w-6" />
-                </button>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => openUrl(t('contact.githubUrl'))}
-                  aria-label="GitHub"
-                  className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer"
-                >
-                  <img src="/logos/github.svg" alt="GitHub" className="h-6 w-6" />
-                </button>
-              </div>
+              <button
+                onClick={() => openUrl(t('contact.githubUrl'))}
+                aria-label="GitHub"
+                className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors cursor-pointer"
+              >
+                <img src="/logos/github.svg" alt="GitHub" className="h-6 w-6" />
+              </button>
             </div>
           </motion.div>
         </div>

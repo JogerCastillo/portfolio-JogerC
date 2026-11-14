@@ -70,13 +70,10 @@
         "error": "Sending failed. Please try again."
     },
     "revealEmail": "Show email",
-    "revealPhone": "Show phone",
     "email": "joger6c@gmail.com",
-    "phone": "REDACTED",
     "copied": "Copied to clipboard",
     "githubUrl": "https://github.com/JogerC",
-    "linkedinUrl": "https://www.linkedin.com/in/joger-gabriel-castillo-quitian-91b0451a5/",
-    "whatsappUrl": "https://wa.me/REDACTED"
+    "linkedinUrl": "https://www.linkedin.com/in/joger-gabriel-castillo-quitian-91b0451a5/"
   },
   "footer": "Designed and built by Joger Castillo."
 }
