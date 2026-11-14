@@ -4,7 +4,11 @@
     "about": "Acerca de mí",
     "projects": "Proyectos",
     "skills": "Habilidades",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "switchToLight": "Cambiar a tema claro",
+    "switchToDark": "Cambiar a tema oscuro",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
     "greeting": "Hola, soy",

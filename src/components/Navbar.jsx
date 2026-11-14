@@ -38,25 +38,39 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-            {dark ? <HiOutlineSun size={18} /> : <HiOutlineMoon size={18} />}
+          <button
+            onClick={toggleTheme}
+            aria-label={dark ? t('nav.switchToLight') : t('nav.switchToDark')}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
+          >
+            {dark ? <HiOutlineSun size={18} aria-hidden="true" /> : <HiOutlineMoon size={18} aria-hidden="true" />}
           </button>
           <button onClick={toggleLanguage} className="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-semibold transition-colors">
-            <HiOutlineTranslate size={18} />
+            <HiOutlineTranslate size={18} aria-hidden="true" />
             <span className="text-xs">{lang.toUpperCase()}</span>
           </button>
         </div>
 
         <div className="md:hidden flex items-center gap-3">
-          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-            {dark ? <HiOutlineSun size={18} /> : <HiOutlineMoon size={18} />}
+          <button
+            onClick={toggleTheme}
+            aria-label={dark ? t('nav.switchToLight') : t('nav.switchToDark')}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
+          >
+            {dark ? <HiOutlineSun size={18} aria-hidden="true" /> : <HiOutlineMoon size={18} aria-hidden="true" />}
           </button>
           <button onClick={toggleLanguage} className="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-semibold transition-colors">
-            <HiOutlineTranslate size={18} />
+            <HiOutlineTranslate size={18} aria-hidden="true" />
             <span className="text-xs">{lang.toUpperCase()}</span>
           </button>
-          <button onClick={() => setMenuOpen(!menuOpen)} className="p-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            className="p-2"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               {menuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
             </svg>
           </button>
@@ -64,7 +78,7 @@ const Navbar = () => {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-inner">
+        <div id="mobile-menu" className="md:hidden bg-white dark:bg-gray-900 shadow-inner">
           <div className="flex flex-col px-6 pb-4 gap-3">
             {navItems.map(item => (
               <Link
