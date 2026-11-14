@@ -8,7 +8,9 @@
     "switchToLight": "Switch to light theme",
     "switchToDark": "Switch to dark theme",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "switchToSpanish": "Switch to Spanish",
+    "switchToEnglish": "Switch to English"
   },
   "hero": {
     "greeting": "Hi, I'm",

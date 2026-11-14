@@ -45,7 +45,12 @@ const Navbar = () => {
           >
             {dark ? <HiOutlineSun size={18} aria-hidden="true" /> : <HiOutlineMoon size={18} aria-hidden="true" />}
           </button>
-          <button onClick={toggleLanguage} className="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-semibold transition-colors">
+          <button
+            onClick={toggleLanguage}
+            aria-label={lang === 'es' ? t('nav.switchToEnglish') : t('nav.switchToSpanish')}
+            aria-pressed={lang === 'en'}
+            className="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-semibold transition-colors"
+          >
             <HiOutlineTranslate size={18} aria-hidden="true" />
             <span className="text-xs">{lang.toUpperCase()}</span>
           </button>
@@ -59,7 +64,12 @@ const Navbar = () => {
           >
             {dark ? <HiOutlineSun size={18} aria-hidden="true" /> : <HiOutlineMoon size={18} aria-hidden="true" />}
           </button>
-          <button onClick={toggleLanguage} className="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-semibold transition-colors">
+          <button
+            onClick={toggleLanguage}
+            aria-label={lang === 'es' ? t('nav.switchToEnglish') : t('nav.switchToSpanish')}
+            aria-pressed={lang === 'en'}
+            className="flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-semibold transition-colors"
+          >
             <HiOutlineTranslate size={18} aria-hidden="true" />
             <span className="text-xs">{lang.toUpperCase()}</span>
           </button>
