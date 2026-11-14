@@ -80,6 +80,9 @@ const Projects = () => {
     setCurrentPage(page);
   }, []);
 
+  const activeIndex = Math.min(currentPage * itemsPerPage, projectsData.length - 1);
+  const activeTitle = t(`projects.${projectsData[activeIndex].key}.title`);
+
   const handleDragEnd = useCallback((_, info) => {
     const threshold = 50;
     if (info.offset.x < -threshold && currentPage < totalPages - 1) {
@@ -106,10 +109,11 @@ const Projects = () => {
           ref={containerRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          onFocus={() => setIsPaused(true)}
+          onBlur={() => setIsPaused(false)}
           role="region"
           aria-label={t('projects.title')}
           aria-roledescription="carousel"
-          aria-live="polite"
           className="overflow-hidden -mx-3"
         >
           <motion.div
@@ -198,6 +202,13 @@ const Projects = () => {
               );
             })}
           </motion.div>
+        </div>
+
+        <div aria-live="polite" aria-atomic="true" className="sr-only">
+          {t('projects.projectCounter')
+            .replace('{current}', String(activeIndex + 1))
+            .replace('{total}', String(projectsData.length))
+            .replace('{title}', activeTitle)}
         </div>
 
         {totalPages > 1 && (
