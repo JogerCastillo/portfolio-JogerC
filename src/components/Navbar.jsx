@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <span className="text-xl font-bold text-gray-800 dark:text-white">FL</span>
+        <span className="text-xl font-bold text-gray-800 dark:text-white">JC</span>
 
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navItems.map(item => (
