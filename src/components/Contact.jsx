@@ -90,6 +90,9 @@ const Contact = () => {
               />
               <ContactFormField
                 type="text"
+                id="name"
+                name="name"
+                label={t('contact.nameLabel')}
                 placeholder={t('contact.form.name')}
                 value={form.name}
                 onChange={e => setForm({...form, name: e.target.value})}
@@ -97,6 +100,9 @@ const Contact = () => {
               />
               <ContactFormField
                 type="email"
+                id="email"
+                name="email"
+                label={t('contact.emailLabel')}
                 placeholder={t('contact.form.email')}
                 value={form.email}
                 onChange={e => setForm({...form, email: e.target.value})}
@@ -105,6 +111,9 @@ const Contact = () => {
               <ContactFormField
                 as="textarea"
                 rows="5"
+                id="message"
+                name="message"
+                label={t('contact.messageLabel')}
                 placeholder={t('contact.form.message')}
                 value={form.message}
                 onChange={e => setForm({...form, message: e.target.value})}

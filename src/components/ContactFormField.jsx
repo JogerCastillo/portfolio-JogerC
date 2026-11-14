@@ -10,11 +10,36 @@ const ContactFormField = ({
   value,
   onChange,
   disabled = false,
+  id,
+  name,
+  label,
 }) => {
   if (as === 'textarea') {
     return (
-      <textarea
-        rows={rows}
+      <>
+        <label htmlFor={id} className="sr-only">{label}</label>
+        <textarea
+          id={id}
+          name={name}
+          rows={rows}
+          required={required}
+          placeholder={placeholder}
+          className={FORM_FIELD_CLASS}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+        />
+      </>
+    );
+  }
+
+  return (
+    <>
+      <label htmlFor={id} className="sr-only">{label}</label>
+      <input
+        id={id}
+        name={name}
+        type={type}
         required={required}
         placeholder={placeholder}
         className={FORM_FIELD_CLASS}
@@ -22,19 +47,7 @@ const ContactFormField = ({
         onChange={onChange}
         disabled={disabled}
       />
-    );
-  }
-
-  return (
-    <input
-      type={type}
-      required={required}
-      placeholder={placeholder}
-      className={FORM_FIELD_CLASS}
-      value={value}
-      onChange={onChange}
-      disabled={disabled}
-    />
+    </>
   );
 };
 

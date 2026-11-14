@@ -61,6 +61,9 @@
   },
   "contact": {
     "title": "Contacto",
+    "nameLabel": "Nombre",
+    "emailLabel": "Correo electrónico",
+    "messageLabel": "Mensaje",
     "form": {
       "name": "Nombre",
       "email": "Correo electrónico",
