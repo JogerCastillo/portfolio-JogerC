@@ -155,7 +155,7 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2.5 bg-white/90 rounded-full text-gray-800 hover:bg-white hover:scale-110 transition-all"
-                            aria-label={`${t('contact.revealEmail')} demo`}
+                            aria-label={`${t('projects.viewDemo')}: ${title}`}
                           >
                             <FiExternalLink size={20} />
                           </a>

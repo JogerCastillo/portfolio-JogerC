@@ -18,6 +18,7 @@
   },
   "projects": {
     "title": "Projects",
+    "viewDemo": "View demo",
     "project1": {
       "title": "Help Desk — Ticket System",
       "desc": "Internal support ticket system with Kanban panel, priority management, agent assignment, and real-time filters. Built with React, Node.js, Express and MySQL.",
