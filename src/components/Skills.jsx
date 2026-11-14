@@ -90,7 +90,6 @@ const Skills = () => {
                   <div
                     key={tech.name}
                     className="flex flex-col items-center gap-2 rounded-xl hover:bg-white/30 dark:hover:bg-white/10 transition-colors px-2 py-3"
-                    aria-label={tech.name}
                   >
                     <img src={tech.src} alt={tech.name} className="h-8 w-8 object-contain" loading="lazy" />
                     <span className="text-[11px] text-center text-gray-600 dark:text-gray-300 leading-tight">
