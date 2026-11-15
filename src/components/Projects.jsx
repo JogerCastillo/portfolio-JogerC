@@ -142,8 +142,8 @@ const Projects = () => {
                         <img
                           src={project.src}
                           alt={title}
-                          width="1920"
-                          height="1080"
+                          width="1200"
+                          height="675"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
                         />
