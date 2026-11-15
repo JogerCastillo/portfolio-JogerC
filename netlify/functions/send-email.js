@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 const MAX_NAME_LENGTH = 80;
 const MAX_EMAIL_LENGTH = 254;
@@ -107,7 +107,7 @@ const verifyTurnstile = async (token) => {
   }
 };
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return jsonResponse(405, { error: 'Método no permitido' });
   }
