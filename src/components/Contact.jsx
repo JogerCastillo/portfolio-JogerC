@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import ContactFormField from './ContactFormField';
 import ContactFormFeedback from './ContactFormFeedback';
 
+const CONTACT_ENDPOINT =
+  import.meta.env.VITE_CONTACT_ENDPOINT || '/.netlify/functions/send-email';
+
 const Contact = () => {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: '', email: '', message: '', website: '', turnstileToken: '' });
@@ -23,9 +26,8 @@ const Contact = () => {
     setIsSubmitting(true);
     setStatus(null);
 
-    const functionUrl = '/.netlify/functions/send-email';
     try {
-        const response = await fetch(functionUrl, {
+        const response = await fetch(CONTACT_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(form),
