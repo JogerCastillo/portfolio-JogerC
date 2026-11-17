@@ -49,9 +49,16 @@ const getClientIp = (event) => {
 };
 
 const isAllowedOrigin = (event) => {
+  const isLocalDev =
+    process.env.NODE_ENV === 'development' || process.env.CONTEXT === 'dev';
+
+  if (isLocalDev) {
+    return true;
+  }
+
   const origin = event.headers.origin || event.headers.referer;
   if (!origin) {
-    return true;
+    return false;
   }
 
   const allowedOrigins = new Set(
