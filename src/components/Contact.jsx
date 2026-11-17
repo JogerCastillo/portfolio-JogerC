@@ -136,7 +136,7 @@ const Contact = () => {
               />
             </form>
 
-            <div className="flex flex-col items-start gap-4 w-fit ml-5 self-start">
+            <div className="flex flex-col items-center md:items-start gap-4 w-full md:w-fit py-4 md:py-0 md:ml-5 md:self-start">
               <button
                 onClick={() => openUrl(t('contact.linkedinUrl'))}
                 aria-label="LinkedIn"
