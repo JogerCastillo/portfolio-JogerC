@@ -21,6 +21,19 @@ const normalizeText = (value) => String(value ?? '').trim();
 const isValidEmail = (value) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) && value.length <= MAX_EMAIL_LENGTH;
 
+/**
+ * Strips CR/LF and other control characters from a string to prevent
+ * email header injection (CWE-93). Also trims and caps length.
+ */
+function sanitizeHeaderValue(value, maxLength = 200) {
+  if (typeof value !== 'string') return '';
+  return value
+    .replace(/[\r\n\t\0]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, maxLength);
+}
+
 const getClientIp = (event) => {
   const forwardedFor = event.headers['x-forwarded-for'];
   if (forwardedFor) {
@@ -150,6 +163,9 @@ export const handler = async (event) => {
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
 
+    const headerName = sanitizeHeaderValue(name);
+    const headerEmail = sanitizeHeaderValue(email, MAX_EMAIL_LENGTH);
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -160,9 +176,9 @@ export const handler = async (event) => {
 
     const mailOptions = {
       from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
-      replyTo: `"${name}" <${email}>`,
+      replyTo: `"${headerName}" <${headerEmail}>`,
       to: process.env.GMAIL_USER,
-      subject: `Mensaje de portafolio de ${name}`,
+      subject: `Mensaje de portafolio de ${headerName}`,
       text: `Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`,
       html: `
         <h3>Nuevo mensaje desde tu portafolio</h3>
