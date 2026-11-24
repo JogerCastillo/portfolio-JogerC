@@ -62,7 +62,7 @@ const isAllowedOrigin = (event) => {
   }
 
   const allowedOrigins = new Set(
-    [process.env.SITE_URL, process.env.URL, 'http://localhost:5173', 'http://127.0.0.1:5173']
+    [process.env.SITE_URL, process.env.URL]
       .filter(Boolean)
       .map((value) => {
         try {
