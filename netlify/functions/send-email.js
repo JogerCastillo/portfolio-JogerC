@@ -183,7 +183,7 @@ export const handler = async (event) => {
 
     const mailOptions = {
       from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
-      replyTo: `"${headerName}" <${headerEmail}>`,
+      replyTo: headerEmail ? { name: headerName, address: headerEmail } : undefined,
       to: process.env.GMAIL_USER,
       subject: `Mensaje de portafolio de ${headerName}`,
       text: `Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`,
