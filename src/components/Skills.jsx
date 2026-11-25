@@ -1,5 +1,5 @@
 import { useTranslation } from '../hooks/useTranslation';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const categories = [
   {
@@ -48,6 +48,7 @@ const defaultLanguages = [
 
 const Skills = () => {
   const { t } = useTranslation();
+  const reduceMotion = useReducedMotion();
 
   const soft = t('skills.softSkills', { returnObjects: true }) || [
     'Pensamiento analítico',
@@ -60,10 +61,14 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-4">
         <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          {...(reduceMotion
+            ? {}
+            : {
+                initial: { opacity: 0, y: -20 },
+                whileInView: { opacity: 1, y: 0 },
+                viewport: { once: true },
+                transition: { duration: 0.5 },
+              })}
           className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
         >
           {t('skills.title')}
@@ -76,10 +81,14 @@ const Skills = () => {
           {categories.map((cat, i) => (
             <motion.div
               key={cat.titleKey}
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              {...(reduceMotion
+                ? {}
+                : {
+                    initial: false,
+                    whileInView: { opacity: 1, y: 0 },
+                    viewport: { once: true },
+                    transition: { duration: 0.4, delay: i * 0.08 },
+                  })}
               className="rounded-2xl border-2 border-gray-200/80 dark:border-slate-600/80 bg-white/40 dark:bg-slate-900/25 backdrop-blur-xl shadow-sm shadow-black/5 dark:shadow-black/20 p-4"
             >
               <h3 className="text-sm font-semibold text-center text-gray-700 dark:text-gray-200 mb-4">
@@ -103,10 +112,14 @@ const Skills = () => {
         </motion.div>
 
         <motion.div
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          {...(reduceMotion
+            ? {}
+            : {
+                initial: false,
+                whileInView: { opacity: 1, y: 0 },
+                viewport: { once: true },
+                transition: { duration: 0.5, delay: 0.3 },
+              })}
           className="max-w-4xl mx-auto rounded-2xl border-2 border-gray-200/80 dark:border-slate-600/80 bg-white/40 dark:bg-slate-900/25 backdrop-blur-xl shadow-sm shadow-black/5 dark:shadow-black/20 p-5 sm:p-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:divide-x md:divide-gray-200/70 md:dark:divide-slate-600/70">
