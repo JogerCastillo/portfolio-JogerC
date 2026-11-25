@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-scroll';
+import { useReducedMotion } from 'framer-motion';
 import { HiOutlineSun, HiOutlineMoon, HiOutlineTranslate } from 'react-icons/hi';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -10,6 +11,7 @@ const Navbar = () => {
   const { lang, toggleLanguage } = useLanguage();
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   const navItems = [
     { key: 'home', label: t('nav.home') },
@@ -30,10 +32,10 @@ const Navbar = () => {
             <Link
               key={item.key}
               to={item.key}
-              smooth
+              smooth={!reduceMotion}
               spy
               offset={-70}
-              duration={500}
+              duration={reduceMotion ? 0 : 500}
               className="cursor-pointer text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               {item.label}
@@ -95,9 +97,9 @@ const Navbar = () => {
               <Link
                 key={item.key}
                 to={item.key}
-                smooth
+                smooth={!reduceMotion}
                 offset={-70}
-                duration={500}
+                duration={reduceMotion ? 0 : 500}
                 onClick={() => setMenuOpen(false)}
                 className="cursor-pointer text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
               >
