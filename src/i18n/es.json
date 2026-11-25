@@ -3,6 +3,7 @@
     "home": "Inicio",
     "about": "Acerca de mí",
     "projects": "Proyectos",
+    "featured": "Destacado",
     "skills": "Habilidades",
     "contact": "Contacto",
     "switchToLight": "Cambiar a tema claro",
@@ -50,6 +51,27 @@
       "comingSoon": true
     },
     "comingSoon": "En desarrollo"
+  },
+  "featured": {
+    "eyebrow": "Proyecto Destacado",
+    "title": "Mesa de Ayuda — Helpdesk",
+    "tagline": "Sistema full-stack de gestión de tickets con RBAC, autenticación JWT y validación con Zod. 25 tests automatizados, CI en verde y cabeceras de seguridad con Helmet.",
+    "imageAlt": "Captura del dashboard de Mesa de Ayuda con KPIs y la lista de tickets",
+    "problemHeading": "El problema",
+    "problem": "Los equipos pequeños de soporte (2–10 personas) suelen seguir sus solicitudes por correo, chat o hojas de cálculo. Mesa de Ayuda centraliza estado, prioridad, responsable y métricas básicas como alternativa ligera a Zendesk o Freshdesk. Es un proyecto de portafolio, no un servicio de producción: sin SLAs, auditoría, SSO ni almacenamiento duradero multi-instancia.",
+    "ctaDemo": "Ver demo en vivo",
+    "ctaRepo": "Ver repositorio",
+    "ctaCaseStudy": "Leer caso de estudio (README)",
+    "metricTests": "tests automatizados",
+    "metricCI": "CI en verde",
+    "metricSecurity": "cabeceras de seguridad",
+    "decisionsHeading": "Decisiones técnicas",
+    "decision1Title": "Archivos JSON en lugar de una base de datos",
+    "decision1Body": "Cero infraestructura; la escritura atómica (temp + rename) reduce el riesgo de archivos a medio escribir. Trade-off: sin queries, transacciones, índices ni coordinación entre instancias, y las escrituras concurrentes pueden pisarse. Para producción migraría a SQLite y luego a PostgreSQL.",
+    "decision2Title": "JWT de 8 horas + lista de revocación en memoria",
+    "decision2Body": "Auth stateless con tokens de 8 h y un Set de IDs revocados por proceso. Trade-off: la lista se pierde al reiniciar y no se comparte entre instancias; el cliente limpia su estado local pero no llama al logout del API. En producción usaría Redis o sesiones de servidor.",
+    "decision3Title": "Un único backend monolítico",
+    "decision3Body": "Alcance simple e iteración rápida: rutas, auth, validación y lógica de tickets en backend/src/server.js, con la I/O de JSON aislada en store.js. Trade-off: difícil de testear de forma aislada (los tests levantan servidores HTTP). Post-MVP: separar en routes/controllers/services."
   },
   "skills": {
     "title": "Habilidades",

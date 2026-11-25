@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About me",
     "projects": "Projects",
+    "featured": "Featured",
     "skills": "Skills",
     "contact": "Contact",
     "switchToLight": "Switch to light theme",
@@ -50,6 +51,27 @@
       "comingSoon": true
     },
     "comingSoon": "In progress"
+  },
+  "featured": {
+    "eyebrow": "Featured Project",
+    "title": "Mesa de Ayuda — Helpdesk",
+    "tagline": "A full-stack ticket management system with RBAC, JWT auth and Zod validation. 25 automated tests, green CI and Helmet security headers.",
+    "imageAlt": "Screenshot of the Mesa de Ayuda dashboard with KPIs and the ticket list",
+    "problemHeading": "The problem",
+    "problem": "Small support teams (2–10 people) often track requests across email, chat or spreadsheets. Mesa de Ayuda centralizes status, priority, ownership and basic metrics as a lightweight alternative to Zendesk or Freshdesk. It's a portfolio project, not a production service: no SLAs, audit history, SSO or durable multi-instance storage.",
+    "ctaDemo": "View live demo",
+    "ctaRepo": "View repository",
+    "ctaCaseStudy": "Read case study (README)",
+    "metricTests": "automated tests",
+    "metricCI": "green CI",
+    "metricSecurity": "security headers",
+    "decisionsHeading": "Technical decisions",
+    "decision1Title": "JSON files over a database",
+    "decision1Body": "Zero infrastructure; atomic writes (temp + rename) reduce the chance of partially written files. Trade-off: no queries, transactions, indexes or multi-instance coordination, and concurrent writes can overwrite each other. For production I'd migrate to SQLite, then PostgreSQL.",
+    "decision2Title": "8-hour JWTs + in-memory revocation list",
+    "decision2Body": "Stateless auth with 8-hour tokens and a process-local Set of revoked IDs. Trade-off: the list resets on restart and isn't shared across instances; the client clears its local state but never calls the API logout endpoint. Production would need Redis or server-side sessions.",
+    "decision3Title": "A single monolithic backend",
+    "decision3Body": "Simple scope and fast iteration: routes, auth, validation and ticket logic in backend/src/server.js, with JSON I/O isolated in store.js. Trade-off: hard to unit-test in isolation (tests spawn HTTP servers). Post-MVP: split into routes/controllers/services."
   },
   "skills": {
     "title": "Skills",

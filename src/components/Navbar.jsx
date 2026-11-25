@@ -15,6 +15,7 @@ const Navbar = () => {
     { key: 'home', label: t('nav.home') },
     { key: 'about', label: t('nav.about') },
     { key: 'projects', label: t('nav.projects') },
+    { key: 'featured', label: t('nav.featured') },
     { key: 'skills', label: t('nav.skills') },
     { key: 'contact', label: t('nav.contact') },
   ];
