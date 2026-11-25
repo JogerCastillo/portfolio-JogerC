@@ -30,14 +30,13 @@ contact form, a strict Content Security Policy, and CI on every push.
 - **Dark / light theme** — follows `prefers-color-scheme` on first visit,
   persists in `localStorage`, and is resolved by a CSP-hashed inline script
   before first paint (no flash of the wrong theme).
-- **Accessible** — semantic landmarks and heading order, ARIA labels on icon-only
-  buttons, `aria-expanded` / `aria-controls` on the mobile menu, an `sr-only`
-  live region announcing carousel changes, autoplay paused on hover and focus,
-  `<html lang>` synced with the active language, and visible focus states.
-  Target: WCAG 2.1 AA. CSS transitions, smooth scrolling and the Hero /
-  Projects / Featured animations are disabled under
-  `prefers-reduced-motion: reduce`; the remaining scroll reveals in About,
-  Skills and Contact are a known gap.
+- **Accessible** — Target: WCAG 2.1 AA. Semantic landmarks and heading order,
+  ARIA labels on icon-only buttons, `aria-expanded` / `aria-controls` on the
+  mobile menu, keyboard navigation, an `sr-only` live region announcing
+  carousel changes, autoplay paused on hover and focus, `<html lang>` synced
+  with the active language, and visible focus states. All CSS and
+  framer-motion animations respect `prefers-reduced-motion: reduce`,
+  including smooth scrolling in the navbar.
 - **Secure contact form** — Cloudflare Turnstile (fail-closed), honeypot field,
   CRLF/header-injection sanitization, production origin allowlist, field length
   caps, and nodemailer v10.
