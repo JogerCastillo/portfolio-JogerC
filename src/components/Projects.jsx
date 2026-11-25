@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiShield } from 'react-icons/fi';
 
 const projectsData = [
@@ -41,6 +41,7 @@ const projectsData = [
 
 const Projects = () => {
   const { t } = useTranslation();
+  const reduceMotion = useReducedMotion();
   const containerRef = useRef(null);
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [currentPage, setCurrentPage] = useState(0);
@@ -96,10 +97,14 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
         <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          {...(reduceMotion
+            ? {}
+            : {
+                initial: { opacity: 0, y: -20 },
+                whileInView: { opacity: 1, y: 0 },
+                viewport: { once: true },
+                transition: { duration: 0.5 },
+              })}
           className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
         >
           {t('projects.title')}
@@ -119,7 +124,11 @@ const Projects = () => {
           <motion.div
             className="flex"
             animate={{ x: -(currentPage * (100 / itemsPerPage)) + '%' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { type: 'spring', stiffness: 300, damping: 30 }
+            }
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.3}

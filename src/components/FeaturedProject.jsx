@@ -1,5 +1,5 @@
 import { useTranslation } from '../hooks/useTranslation';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiFileText, FiCheckCircle, FiShield, FiTerminal } from 'react-icons/fi';
 
 const stack = ['Node 20', 'Express', 'JWT', 'Zod', 'Vanilla JS', 'Tailwind'];
@@ -14,6 +14,17 @@ const decisions = [1, 2, 3];
 
 const FeaturedProject = () => {
   const { t } = useTranslation();
+  const reduceMotion = useReducedMotion();
+
+  const reveal = (axis, offset, delay = 0) =>
+    reduceMotion
+      ? {}
+      : {
+          initial: { opacity: 0, [axis]: offset },
+          whileInView: { opacity: 1, [axis]: 0 },
+          viewport: { once: true },
+          transition: { duration: 0.5, delay },
+        };
 
   return (
     <section id="featured" className="py-20 px-4 bg-gray-50 dark:bg-gray-800/50">
@@ -32,10 +43,7 @@ const FeaturedProject = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            {...reveal('x', -20)}
             className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700"
           >
             <img
@@ -49,10 +57,7 @@ const FeaturedProject = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            {...reveal('x', 20)}
             className="space-y-6"
           >
             <div>
@@ -108,10 +113,7 @@ const FeaturedProject = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          {...reveal('y', 20, 0.2)}
           className="grid grid-cols-1 sm:grid-cols-3 gap-4"
         >
           {metrics.map(({ key, value, Icon, color }) => (
@@ -127,10 +129,7 @@ const FeaturedProject = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          {...reveal('y', 20, 0.3)}
           className="mt-12 p-6 md:p-8 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
         >
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
