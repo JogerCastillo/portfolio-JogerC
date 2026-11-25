@@ -39,10 +39,10 @@ const FeaturedProject = () => {
             className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700"
           >
             <img
-              src="/projects/helpdesk-dashboard.png"
+              src="/projects/helpdesk-dashboard.jpg"
               alt={t('featured.imageAlt')}
-              width="1920"
-              height="1080"
+              width="1600"
+              height="900"
               loading="lazy"
               className="w-full h-auto"
             />
