@@ -30,6 +30,20 @@
     <meta name="twitter:description" content="Full Stack Developer building real-world web applications with React, Node.js, NestJS and Python." />
     <meta name="twitter:image" content="https://portfolio-jogerc.netlify.app/og-image.png" />
 
+    <!-- Theme: resolved before first paint to avoid a flash of the wrong theme.
+         Kept in sync with src/contexts/ThemeContext.jsx and hashed in the CSP
+         (netlify.toml). Any change to this script requires a new hash. -->
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = theme === 'dark' || (!theme && prefersDark);
+          if (isDark) document.documentElement.classList.add('dark');
+        } catch (e) { /* localStorage can be blocked (private mode, policies) */ }
+      })();
+    </script>
+
     <!-- Turnstile (preserva el script existente si ya estaba aquí) -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </head>
