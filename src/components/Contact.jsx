@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import ContactFormField from './ContactFormField';
 import ContactFormFeedback from './ContactFormFeedback';
 
@@ -9,6 +9,7 @@ const CONTACT_ENDPOINT =
 
 const Contact = () => {
   const { t } = useTranslation();
+  const reduceMotion = useReducedMotion();
   const [form, setForm] = useState({ name: '', email: '', message: '', website: '', turnstileToken: '' });
   const [status, setStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,10 +63,14 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-4xl mx-auto px-4">
         <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          {...(reduceMotion
+            ? {}
+            : {
+                initial: { opacity: 0, y: -20 },
+                whileInView: { opacity: 1, y: 0 },
+                viewport: { once: true },
+                transition: { duration: 0.5 },
+              })}
           className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
         >
           {t('contact.title')}
@@ -73,10 +78,14 @@ const Contact = () => {
 
         <div className="flex justify-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...(reduceMotion
+              ? {}
+              : {
+                  initial: { opacity: 0, y: 30 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: true },
+                  transition: { duration: 0.6 },
+                })}
             className="flex flex-col md:flex-row items-center gap-0"
           >
             <form onSubmit={handleSubmit} className="space-y-5 max-w-md w-full" aria-busy={isSubmitting}>
